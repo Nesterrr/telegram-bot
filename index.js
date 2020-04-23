@@ -15,7 +15,7 @@ app.use(
 app.post('/new-message', function(req, res) {
   const { message } = req.body
 
-  console.log('message: ', message);
+//   console.log('message: ', message);
   //Each message contains "text" and a "chat" object, which has an "id" which is the chat id
 
   if (!message || message.text.toLowerCase().indexOf('marco') < 0) {
@@ -36,17 +36,17 @@ app.post('/new-message', function(req, res) {
     )
     .then(response => {
       // We get here if the message was successfully posted
-      console.log('Message posted')
+    //   console.log('Message posted')
       res.end('ok')
     })
     .catch(err => {
       // ...and here if it was not
-      console.log('Error :', err)
+    //   console.log('Error :', err)
       res.end('Error :' + err)
     })
 })
 
 // Finally, start our server
 app.listen(3000, function() {
-  console.log('Telegram app listening on port 3000!')
+//   console.log('Telegram app listening on port 3000!')
 })
